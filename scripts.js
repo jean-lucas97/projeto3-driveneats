@@ -114,6 +114,7 @@ function finalizarPedido () {
         - Bebida: ${drink}
         - Sobremesa: ${dessert}
         Total:  R$ ${total.toFixed(2)}
+        
         Nome: ${nomeCliente}
         Endereço: ${endereco}`)
        
