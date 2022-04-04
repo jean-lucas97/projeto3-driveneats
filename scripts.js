@@ -11,19 +11,6 @@ let dessertpreco = 0;
 let nomeCliente = '';
 let endereco = '';
 
-function habilitarPedido() {
- 
-    if (contadorPedidos === 3){
-        const finishRequest = document.querySelector(".fazerpedido");
-        
-        finishRequest.classList.add("ativo");
-        finishRequest.innerHTML = "Fazer pedido";
-
-    }
-    
-}
-
-
 
 function selecionarPrato(element, foodName, foodPrice){
     console.log(element)
@@ -57,6 +44,7 @@ function selecionarBebida(element, drinkName, drinkPrice) {
     habilitarPedido();
 }
 
+
 function selecionarSobremesa(element, dessertName, dessertPrice) {
     console.log(element)
 
@@ -72,6 +60,47 @@ function selecionarSobremesa(element, dessertName, dessertPrice) {
 
     habilitarPedido();
 }
+
+function habilitarPedido() {
+ 
+    if (contadorPedidos === 3){
+        const finishRequest = document.querySelector(".fazerpedido");
+        
+        finishRequest.classList.add("ativo");
+        finishRequest.innerHTML = "Fazer pedido";
+
+    }
+    
+}
+function confirmarPedido(){
+    if (contadorPedidos === 3){
+        const botao = document.querySelector(".background.escondido")
+        botao.classList.remove("escondido");
+    }
+
+    registrarPedidos();
+    
+}
+
+function cancelarPedido () {
+    console.log()
+    const cancelar = document.querySelector(".background")
+    
+    cancelar.classList.add("escondido");    
+       
+}
+function registrarPedidos() {
+    document.querySelector(".nome-comida").innerHTML = food;
+    document.querySelector(".nome-bebida").innerHTML = drink;
+    document.querySelector(".nome-sobremesa").innerHTML = dessert;
+    document.querySelector(".preco-comida").innerHTML = foodpreco.toFixed(2).toString().replace(".",",");
+    document.querySelector(".preco-bebida").innerHTML = drinkpreco.toFixed(2).toString().replace(".",",");
+    document.querySelector(".preco-sobremesa").innerHTML = dessertpreco.toFixed(2).toString().replace(".",",");
+    document.querySelector(".preco").innerHTML ="R$ " + (foodpreco + drinkpreco + dessertpreco).toFixed(2).toString().replace(".",",");
+
+}
+
+
 
 function finalizarPedido () {
     const nomeCliente = prompt("Qual é o seu nome?");

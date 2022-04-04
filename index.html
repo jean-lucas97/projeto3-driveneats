@@ -15,27 +15,37 @@
         <p>Sua comida em 6 minutos</p>
     </header>
     <main>
-        <div class="confirm-box escondido">
-            <div class="title3"></div>
-            <div class="prato">
-                <div class="nome"></div>
-                <div class="preco"></div>
-            </div>
-            <div class="bebida">
-                <div class="nome"></div>
-                <div class="preco"></div>
-            </div>
-            <div class="sobremesa">
-                <div class="nome"></div>
-                <div class="preco"></div>
-            </div>
-            <div class="total">
-                <div>Total</div>
-                <div class="preco"></div>
-            </div>
+        <div class="background escondido">
 
+            <div class="confirm-box ">
+                <div class="title3 alinhar">Confirme seu pedido</div>
+                <div class="pedidos">
+                    <div class="confirmar-prato">
+                    <div class="nome-comida">teste</div>
+                    <div class="preco-comida">teste</div>
+                </div>
+                <div class="confirmar-bebida">
+                    <div class="nome-bebida">teste</div>
+                    <div class="preco-bebida">teste</div>
+                </div>
+                <div class="confirmar-sobremesa">
+                    <div class="nome-sobremesa">teste</div>
+                    <div class="preco-sobremesa">teste</div>
+                </div>
+                </div>
+                
+                <div class="total alinhar">
+                    <div>Total</div>
+                    <div class="preco">teste</div>
+                </div>
+                <div class="finalizar alinhar" onclick="finalizarPedido()">Tudo certo, pode pedir!</div>
+                <div class="cancelar alinhar" onclick="cancelarPedido()">Cancelar</div>
+
+
+             </div>
 
         </div>
+        
 
 
 
@@ -189,7 +199,7 @@
 
     </main>
     <footer>
-        <button class="fazerpedido" onclick="finalizarPedido()">Selecione os 3 itens
+        <button class="fazerpedido" onclick="confirmarPedido()">Selecione os 3 itens
             <br>para fechar o pedido</button>
     </footer>
 
